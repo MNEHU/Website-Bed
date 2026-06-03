@@ -1,12 +1,60 @@
 {
   "items": [
-    { "name": "Kaapse Bossen", "desc": "Uitgestrekte bossen met prachtige heidegebieden en vergezichten.", "distance": "Op loopafstand", "image": "", "scene": "heath" },
-    { "name": "Henschotermeer", "desc": "Schilderachtig meer omgeven door natuur — perfect voor een frisse duik.", "distance": "8 km", "image": "", "scene": "lake" },
-    { "name": "Huis Doorn", "desc": "Historisch kasteel omringd door prachtige tuinen en park.", "distance": "5 km", "image": "", "scene": "house" },
-    { "name": "Nationaal Park", "desc": "Nationaal Park Utrechtse Heuvelrug — een van de mooiste van Nederland.", "distance": "Direct bereikbaar", "image": "", "scene": "forest" },
-    { "name": "Kasteel Amerongen", "desc": "Prachtig bewaard kasteel met rijke Nederlandse geschiedenis.", "distance": "10 km", "image": "", "scene": "house" },
-    { "name": "Leersumse Plassen", "desc": "Rustgevende plassen perfect voor een wandeling langs het water.", "distance": "6 km", "image": "", "scene": "lake" },
-    { "name": "Doornse Gat", "desc": "Idyllisch zwemwater in het hart van het bos.", "distance": "4 km", "image": "", "scene": "lake" },
-    { "name": "Pyramide van Austerlitz", "desc": "Bijzonder Napoleontisch monument midden in het bos.", "distance": "12 km", "image": "", "scene": "pyramid" }
+    {
+      "name": "Kaapse Bossen",
+      "desc": "Uitgestrekte bossen met prachtige heidegebieden en vergezichten.",
+      "distance": "Op loopafstand",
+      "image": "/images/uploads/images.jpg",
+      "scene": "heath"
+    },
+    {
+      "name": "Henschotermeer",
+      "desc": "Schilderachtig meer omgeven door natuur — perfect voor een frisse duik.",
+      "distance": "8 km",
+      "image": "",
+      "scene": "lake"
+    },
+    {
+      "name": "Huis Doorn",
+      "desc": "Historisch kasteel omringd door prachtige tuinen en park.",
+      "distance": "5 km",
+      "image": "",
+      "scene": "house"
+    },
+    {
+      "name": "Nationaal Park",
+      "desc": "Nationaal Park Utrechtse Heuvelrug — een van de mooiste van Nederland.",
+      "distance": "Direct bereikbaar",
+      "image": "",
+      "scene": "forest"
+    },
+    {
+      "name": "Kasteel Amerongen",
+      "desc": "Prachtig bewaard kasteel met rijke Nederlandse geschiedenis.",
+      "distance": "10 km",
+      "image": "",
+      "scene": "house"
+    },
+    {
+      "name": "Leersumse Plassen",
+      "desc": "Rustgevende plassen perfect voor een wandeling langs het water.",
+      "distance": "6 km",
+      "image": "",
+      "scene": "lake"
+    },
+    {
+      "name": "Doornse Gat",
+      "desc": "Idyllisch zwemwater in het hart van het bos.",
+      "distance": "4 km",
+      "image": "",
+      "scene": "lake"
+    },
+    {
+      "name": "Pyramide van Austerlitz",
+      "desc": "Bijzonder Napoleontisch monument midden in het bos.",
+      "distance": "12 km",
+      "image": "",
+      "scene": "pyramid"
+    }
   ]
 }
