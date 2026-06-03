@@ -11,49 +11,49 @@
       "name": "Henschotermeer",
       "desc": "Schilderachtig meer omgeven door natuur — perfect voor een frisse duik.",
       "distance": "8 km",
-      "image": "",
+      "image": "/images/uploads/nederland-utrecht-henschotermeer-7.jpg",
       "scene": "lake"
     },
     {
       "name": "Huis Doorn",
       "desc": "Historisch kasteel omringd door prachtige tuinen en park.",
       "distance": "5 km",
-      "image": "",
+      "image": "/images/uploads/doorncastle.jpg",
       "scene": "house"
     },
     {
       "name": "Nationaal Park",
       "desc": "Nationaal Park Utrechtse Heuvelrug — een van de mooiste van Nederland.",
       "distance": "Direct bereikbaar",
-      "image": "",
+      "image": "/images/uploads/leersumseveld-0983-small.jpg",
       "scene": "forest"
     },
     {
       "name": "Kasteel Amerongen",
       "desc": "Prachtig bewaard kasteel met rijke Nederlandse geschiedenis.",
       "distance": "10 km",
-      "image": "",
+      "image": "/images/uploads/kasteel-amerongen-credits-arie-rebergen-1.jpg",
       "scene": "house"
     },
     {
       "name": "Leersumse Plassen",
       "desc": "Rustgevende plassen perfect voor een wandeling langs het water.",
       "distance": "6 km",
-      "image": "",
+      "image": "/images/uploads/sized_dsc_0987ps.jpg",
       "scene": "lake"
     },
     {
       "name": "Doornse Gat",
       "desc": "Idyllisch zwemwater in het hart van het bos.",
       "distance": "4 km",
-      "image": "",
+      "image": "/images/uploads/doornse_gat_3.jpg",
       "scene": "lake"
     },
     {
       "name": "Pyramide van Austerlitz",
       "desc": "Bijzonder Napoleontisch monument midden in het bos.",
       "distance": "12 km",
-      "image": "",
+      "image": "/images/uploads/cid2687_np-utrechtse-heuvelrug-4-headersuggestie-2.jpg",
       "scene": "pyramid"
     }
   ]
