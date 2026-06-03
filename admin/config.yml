@@ -1,17 +1,13 @@
-# Decap CMS configuratie — Boshuisje Maarsmontagne
-#
-# Dit bestand bepaalt WELKE teksten en afbeeldingen je in het adminpaneel kunt aanpassen.
-# Je hoeft hier normaal niets aan te veranderen — beheren doe je via /admin op de website.
+# Decap CMS configuratie - Boshuisje Maarsmontagne
+# Bepaalt welke teksten en afbeeldingen je in het adminpaneel (/admin) kunt aanpassen.
 
 backend:
-  name: git-gateway       # werkt samen met Netlify Identity (zie handleiding)
-  branch: main            # de tak in GitHub waar je site staat
+  name: git-gateway
+  branch: main
 
-# Geüploade foto's komen in deze map terecht
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
-# Taal van het paneel
 locale: "nl"
 
 collections:
@@ -21,41 +17,81 @@ collections:
     editor:
       preview: false
     files:
-      # ---------- HOMEPAGINA / HERO ----------
-      - name: "hero"
-        label: "Startscherm (hero)"
+      # ---------- STARTSCHERM + INTRO + PRIJZEN + OVER + CONTACT ----------
+      - name: "site"
+        label: "Algemene teksten & foto's"
         file: "content/site.json"
         fields:
-          - { name: "hero_eyebrow", label: "Bovenregel", widget: "string" }
-          - { name: "hero_title_1", label: "Titel regel 1", widget: "string" }
-          - { name: "hero_title_2", label: "Titel regel 2 (cursief)", widget: "string" }
-          - { name: "hero_subtitle", label: "Subtitel", widget: "text" }
-          - { name: "hero_image", label: "Achtergrondfoto", widget: "image", required: false }
+          - { name: "hero_eyebrow", label: "Startscherm - bovenregel", widget: "string" }
+          - { name: "hero_title_1", label: "Startscherm - titel regel 1", widget: "string" }
+          - { name: "hero_title_2", label: "Startscherm - titel regel 2 (cursief)", widget: "string" }
+          - { name: "hero_subtitle", label: "Startscherm - subtitel", widget: "text" }
+          - { name: "hero_image", label: "Startscherm - achtergrondfoto", widget: "image", required: false }
 
-          # ---------- INTRODUCTIE ----------
-          - { name: "intro_title", label: "Introductie — titel", widget: "string" }
-          - { name: "intro_text_1", label: "Introductie — alinea 1", widget: "text" }
-          - { name: "intro_text_2", label: "Introductie — alinea 2", widget: "text" }
-          - { name: "intro_image", label: "Introductie — foto", widget: "image", required: false }
+          - { name: "intro_label", label: "Introductie - labeltekst", widget: "string" }
+          - { name: "intro_title", label: "Introductie - titel", widget: "text", hint: "Gebruik een nieuwe regel voor een regelafbreking." }
+          - { name: "intro_text_1", label: "Introductie - alinea 1", widget: "text" }
+          - { name: "intro_text_2", label: "Introductie - alinea 2", widget: "text" }
+          - { name: "intro_image", label: "Introductie - foto", widget: "image", required: false }
 
-          # ---------- PRIJZEN ----------
+          - name: "specs"
+            label: "Specificaties (kenmerken)"
+            widget: "list"
+            fields:
+              - { name: "label", label: "Naam (bv. Capaciteit)", widget: "string" }
+              - { name: "value", label: "Waarde (bv. 2-4 personen)", widget: "string" }
+
+          - name: "usps"
+            label: "Drie kenmerken (USP's)"
+            widget: "list"
+            max: 3
+            fields:
+              - { name: "title", label: "Titel", widget: "string" }
+              - { name: "text", label: "Omschrijving", widget: "text" }
+
+          - { name: "story_year", label: "Verhaal - jaartal", widget: "string" }
+          - { name: "story_intro", label: "Verhaal - introzin (cursief)", widget: "text" }
+          - { name: "story_label", label: "Verhaal - labeltekst", widget: "string" }
+          - { name: "story_title_1", label: "Verhaal - titel regel 1", widget: "string" }
+          - { name: "story_title_2", label: "Verhaal - titel regel 2 (cursief)", widget: "string" }
+          - { name: "story_text_1", label: "Verhaal - alinea 1", widget: "text" }
+          - { name: "story_text_2", label: "Verhaal - alinea 2", widget: "text" }
+          - { name: "story_text_3", label: "Verhaal - alinea 3", widget: "text" }
+
+          - { name: "experiences_title", label: "Beleef - titel", widget: "string" }
+          - { name: "experiences_intro", label: "Beleef - introtekst", widget: "text" }
+
+          - { name: "surroundings_intro", label: "Omgeving - introtekst", widget: "text" }
+
           - { name: "price_main", label: "Prijs per nacht (cijfer)", widget: "string" }
           - { name: "price_extra", label: "Prijs extra persoon", widget: "string" }
           - { name: "price_min_nights", label: "Minimaal aantal nachten", widget: "string" }
 
-          # ---------- OVER ONS ----------
-          - { name: "about_text_1", label: "Over ons — alinea 1", widget: "text" }
-          - { name: "about_text_2", label: "Over ons — alinea 2", widget: "text" }
-          - { name: "about_text_3", label: "Over ons — alinea 3", widget: "text" }
-          - { name: "about_image", label: "Over ons — foto eigenaren", widget: "image", required: false }
+          - { name: "about_text_1", label: "Over ons - alinea 1", widget: "text" }
+          - { name: "about_text_2", label: "Over ons - alinea 2", widget: "text" }
+          - { name: "about_text_3", label: "Over ons - alinea 3", widget: "text" }
+          - { name: "about_image", label: "Over ons - foto eigenaren", widget: "image", required: false }
 
-          # ---------- CONTACT ----------
           - { name: "contact_phone", label: "Telefoonnummer", widget: "string" }
           - { name: "contact_email", label: "E-mailadres", widget: "string" }
           - { name: "contact_whatsapp", label: "WhatsApp-nummer (alleen cijfers, bv. 31612345678)", widget: "string" }
           - { name: "contact_instagram", label: "Instagram gebruikersnaam", widget: "string" }
 
-      # ---------- REVIEWS (lijst — toevoegen/verwijderen) ----------
+      # ---------- BELEEF-KAARTEN ----------
+      - name: "experiences"
+        label: "Beleef Maarsmontagne (kaarten)"
+        file: "content/experiences.json"
+        fields:
+          - name: "items"
+            label: "Belevenissen"
+            widget: "list"
+            fields:
+              - { name: "title", label: "Titel", widget: "string" }
+              - { name: "text", label: "Omschrijving", widget: "text" }
+              - { name: "badge", label: "Label (bv. Binnenkort)", widget: "string", required: false }
+              - { name: "icon", label: "Icoon (emoji, optioneel)", widget: "string", required: false }
+
+      # ---------- REVIEWS ----------
       - name: "reviews"
         label: "Reviews"
         file: "content/reviews.json"
@@ -68,15 +104,17 @@ collections:
               - { name: "quote", label: "Citaat", widget: "text" }
               - { name: "author", label: "Naam & plaats", widget: "string" }
 
-      # ---------- BELEEF MAARSMONTAGNE (lijst) ----------
-      - name: "experiences"
-        label: "Beleef Maarsmontagne (kaarten)"
-        file: "content/experiences.json"
+      # ---------- OMGEVINGSKAARTEN ----------
+      - name: "locations"
+        label: "Omgeving (kaarten)"
+        file: "content/locations.json"
         fields:
           - name: "items"
-            label: "Belevenissen"
+            label: "Locaties"
             widget: "list"
             fields:
-              - { name: "title", label: "Titel", widget: "string" }
-              - { name: "text", label: "Omschrijving", widget: "text" }
-              - { name: "badge", label: "Label (bv. Binnenkort)", widget: "string", required: false }
+              - { name: "name", label: "Naam", widget: "string" }
+              - { name: "desc", label: "Omschrijving", widget: "text" }
+              - { name: "distance", label: "Afstand (bv. 8 km)", widget: "string", required: false }
+              - { name: "image", label: "Foto (optioneel; leeg = illustratie)", widget: "image", required: false }
+              - { name: "scene", label: "Type illustratie als er geen foto is", widget: "select", required: false, options: ["forest","lake","heath","house","pyramid","terrace","fire","interior"], default: "forest" }
