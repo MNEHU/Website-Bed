@@ -1,7 +1,16 @@
 {
   "items": [
-    { "quote": "Wat een magische plek. De rust, de natuur, het interieur — alles klopt. We zijn al aan het plannen voor onze volgende trip.", "author": "Sophie & Lars — Utrecht" },
-    { "quote": "Direct in het bos, fantastisch authentiek en toch superlekker modern van binnen. De houtkachel op de avond was echt het hoogtepunt.", "author": "Maarten & Roos — Amsterdam" },
-    { "quote": "We zijn met onze hond meegeweest. Ruimte, rust en lieve eigenaren die echt overal aan gedacht hebben. Aanrader!", "author": "Julia — Den Haag" }
+    {
+      "quote": "Wat een fijne plek! We hebben veel gewandeld op de Utrechtse Heuvelrug en 's avonds genoten van de rust. Precies wat we zochten.",
+      "author": "Sophie & Lars - Utrecht"
+    },
+    {
+      "quote": "Heerlijk weekend gehad. Het huisje is sfeervol ingericht, alles was netjes en je loopt zo het bos in. We komen graag nog eens terug.",
+      "author": "Roos - Amsterdam"
+    },
+    {
+      "quote": "Beautiful location and a very comfortable cottage. Peaceful, well-equipped, and close to some great walking trails. We really enjoyed our stay.",
+      "author": "Meredith - USA"
+    }
   ]
 }
