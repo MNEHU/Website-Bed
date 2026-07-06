@@ -2,10 +2,10 @@
   "items": [
     {
       "name": "Kaapse Bossen",
-      "desc": "Uitgestrekte bossen met prachtige heidegebieden en vergezichten.",
+      "desc": "Een van onze favoriete plekken om naar toe te wandelen. Beklimt uitkijktoren De Kaap voor een prachtig uitzicht over de Utrechtse Heuvelrug, en bij helder weer, kun je zelfs de Dom in Utrecht zien. ",
       "distance": "Op loopafstand",
       "image": "/images/uploads/images.jpg",
-      "scene": "heath"
+      "scene": "forest"
     },
     {
       "name": "Henschotermeer",
