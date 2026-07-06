@@ -2,7 +2,7 @@
   "items": [
     {
       "name": "Kaapse Bossen",
-      "desc": "Een van onze favoriete plekken om naar toe te wandelen. Beklim uitkijktoren De Kaap voor een prachtig uitzicht over de Utrechtse Heuvelrug en bij helder weer, kun je zelfs de Dom in Utrecht zien. ",
+      "desc": "Een van onze favoriete plekken om naar toe te wandelen. Beklim uitkijktoren De Kaap voor een prachtig zicht over de Utrechtse Heuvelrug en wie weet spot je zelfs de Dom in Utrecht. ",
       "distance": "Op loopafstand",
       "image": "/images/uploads/images.jpg",
       "scene": "forest"
@@ -16,7 +16,7 @@
     },
     {
       "name": "Huis Doorn",
-      "desc": "Historisch kasteel omringd door prachtige tuinen en park.",
+      "desc": "Een bijzonder landhuis met een rijke geschiedenis. Wandel door de tuinen, bezoek het museum en ontdek het verhaal van de laatste Duitse keizer.",
       "distance": "5 km",
       "image": "/images/uploads/doorncastle.jpg",
       "scene": "house"
@@ -36,22 +36,22 @@
       "scene": "house"
     },
     {
-      "name": "Leersumse Plassen",
-      "desc": "Rustgevende plassen perfect voor een wandeling langs het water.",
-      "distance": "6 km",
-      "image": "/images/uploads/sized_dsc_0987ps.jpg",
+      "name": "Leersumse Veld",
+      "desc": "Een mooie afwisseling van heide, bos en water. Een fijne plek voor een rustige wandeling.",
+      "distance": "4 km",
+      "image": "/images/uploads/whatsapp-image-2026-07-06-at-21.53.26.jpeg",
       "scene": "lake"
     },
     {
-      "name": "Doornse Gat",
-      "desc": "Idyllisch zwemwater in het hart van het bos.",
-      "distance": "4 km",
-      "image": "/images/uploads/doornse_gat_3.jpg",
-      "scene": "lake"
+      "name": "Mountainbikeroute Leersum",
+      "desc": "Een van de mooiste mountainbikeroutes van Nederland. Het startpunt ligt op een paar minuten fietsen. Geen MTB? In Leersum kun je er een huren! ",
+      "distance": "3 km",
+      "image": "/images/uploads/whatsapp-image-2026-07-06-at-21.52.57.jpeg",
+      "scene": null
     },
     {
       "name": "Pyramide van Austerlitz",
-      "desc": "Bijzonder Napoleontisch monument midden in het bos.",
+      "desc": "Wist je dat Nederland een eigen piramide heeft? Deze werd gebouwd ter ere van Napoleon en is een leuk uitstapje met een bijzonder stukje geschiedenis.",
       "distance": "12 km",
       "image": "/images/uploads/cid2687_np-utrechtse-heuvelrug-4-headersuggestie-2.jpg",
       "scene": "pyramid"
