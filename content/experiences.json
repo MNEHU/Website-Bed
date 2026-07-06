@@ -1,10 +1,34 @@
 {
   "items": [
-    { "title": "Ontbijtmand", "text": "Een zorgvuldig samengestelde mand met verse streekproducten, klaar wanneer u wakker wordt op het terras.", "badge": "Binnenkort" },
-    { "title": "Wandeling met Boswachter", "text": "Ontdek de geheimen van Landgoed Maarsbergen onder begeleiding van een ervaren boswachter.", "badge": "Binnenkort" },
-    { "title": "Kampvuurpakket", "text": "Marshmallows, hout en alles wat u nodig heeft voor een onvergetelijke avond bij het vuur.", "badge": "Binnenkort" },
-    { "title": "Seizoensarrangementen", "text": "Van herfstpaddenstoelen tot lentebloeisem — elk seizoen beleeft u Maarsmontagne anders.", "badge": "Binnenkort" },
-    { "title": "Picknickmand", "text": "Een gevulde mand voor een onvergetelijke picknick in het bos of aan de rand van het landgoed.", "badge": "Binnenkort" },
-    { "title": "Natuurbelevingen", "text": "Workshops, vogelexcursies en bijzondere ervaringen in de natuur — voor jong en oud.", "badge": "Binnenkort" }
+    {
+      "title": "Ontbijtmand",
+      "text": "Een zorgvuldig samengestelde mand met verse streekproducten, klaar wanneer u wakker wordt op het terras.",
+      "badge": "Binnenkort"
+    },
+    {
+      "title": "Wandeling met Boswachter",
+      "text": "Ontdek de geheimen van Landgoed Maarsbergen onder begeleiding van een ervaren boswachter.",
+      "badge": "Binnenkort"
+    },
+    {
+      "title": "Kampvuurpakket",
+      "text": "Marshmallows, hout en alles wat u nodig heeft voor een onvergetelijke avond bij het vuur.",
+      "badge": "Binnenkort"
+    },
+    {
+      "title": "Seizoensarrangementen",
+      "text": "Van herfstpaddenstoelen tot lentebloeisem — elk seizoen beleeft u Maarsmontagne anders.",
+      "badge": "Binnenkort"
+    },
+    {
+      "title": "Picknickmand",
+      "text": "Een gevulde mand voor een onvergetelijke picknick in het bos of aan de rand van het landgoed.",
+      "badge": "Binnenkort"
+    },
+    {
+      "title": "Natuurbelevingen",
+      "text": "Workshops, vogelexcursies en bijzondere ervaringen in de natuur, voor jong en oud.",
+      "badge": "Binnenkort"
+    }
   ]
 }
