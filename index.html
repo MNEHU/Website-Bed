@@ -665,6 +665,49 @@
     text-align: center;
   }
 
+  /* COST SUMMARY */
+  .cost-summary {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: var(--white);
+    border: 1px solid var(--sand-light);
+  }
+  .cost-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 1rem;
+  }
+  .cost-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    padding: 0.4rem 0;
+  }
+  .cost-row.cost-subtotal {
+    border-top: 1px solid var(--sand-light);
+    margin-top: 0.5rem;
+    padding-top: 0.8rem;
+  }
+  .cost-row.cost-total {
+    border-top: 2px solid var(--sage);
+    margin-top: 0.5rem;
+    padding-top: 0.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: var(--moss);
+  }
+  .cost-note {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+
   /* CALENDAR */
   .calendar-wrap {
     margin-bottom: 4rem;
@@ -968,6 +1011,73 @@
   }
   .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
 
+  /* PRIVACY MODAL */
+  .privacy-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 32, 20, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 300;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+  }
+  .privacy-overlay.open { display: flex; }
+  .privacy-modal {
+    background: var(--white);
+    max-width: 640px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 3rem;
+    position: relative;
+    border-radius: 2px;
+  }
+  .privacy-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    line-height: 1;
+    color: var(--text-muted);
+    cursor: pointer;
+  }
+  .privacy-close:hover { color: var(--moss); }
+  .privacy-modal h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--moss);
+    margin-bottom: 0.25rem;
+  }
+  .privacy-updated {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 1.5rem;
+  }
+  .privacy-modal h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--moss);
+    margin: 1.5rem 0 0.5rem;
+  }
+  .privacy-modal p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+  .privacy-modal a { color: var(--sage-dark); }
+  @media (max-width: 520px) {
+    .privacy-modal { padding: 2rem 1.5rem; }
+  }
+
   /* WHATSAPP STICKY */
   .whatsapp-sticky {
     position: fixed;
@@ -1223,7 +1333,7 @@
           </div>
         </div>
 
-        <div class="amenities-grid">
+        <div class="amenities-grid" id="amenities-grid">
           <div class="amenity"><span class="amenity-icon">🔥</span> Houtkachel</div>
           <div class="amenity"><span class="amenity-icon">🌡️</span> Vloerverwarming</div>
           <div class="amenity"><span class="amenity-icon">🛁</span> Private badkamer</div>
@@ -1238,32 +1348,9 @@
   </div>
 </section>
 
-<!-- USP -->
-<section class="usp">
-  <div class="container">
-    <div class="usp-grid reveal" id="usp-grid">
-      <div class="usp-item">
-        <div class="usp-number">01</div>
-        <div class="usp-title">Historisch landgoed</div>
-        <p class="usp-text">Verblijf op Landgoed Maarsbergen midden op de Utrechtse Heuvelrug, omgeven door eeuwenoud bos en natuur.</p>
-      </div>
-      <div class="usp-item">
-        <div class="usp-number">02</div>
-        <div class="usp-title">Natuur bij de voordeur</div>
-        <p class="usp-text">Vanuit de tuin direct het bos in. Wandel- en fietsroutes vertrekken letterlijk vanaf het terras.</p>
-      </div>
-      <div class="usp-item">
-        <div class="usp-number">03</div>
-        <div class="usp-title">Schuur uit circa 1900</div>
-        <p class="usp-text">Originele houten spanten en historische details gecombineerd met warm Scandinavisch comfort.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- PHOTO BLOCK -->
 <div class="photo-block">
-  <div class="photo-grid">
+  <div class="photo-grid" id="photo-grid">
     <div class="photo-cell span-col" style="grid-row: span 2;">
       <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=900&q=80" alt="Boshuisje interieur" loading="lazy">
     </div>
@@ -1283,7 +1370,7 @@
 </div>
 
 <!-- STORY -->
-<section class="story">
+<section class="story" id="story-section">
   <div class="container">
     <div class="story-inner">
       <div class="reveal" style="text-align:right;">
@@ -1302,51 +1389,25 @@
   </div>
 </section>
 
-<!-- EXPERIENCES -->
-<section class="experiences" id="beleef">
+<!-- ABOUT -->
+<section class="about" id="over-ons">
   <div class="container">
-    <div class="experiences-header reveal">
-      <span class="section-label">Beleef Maarsmontagne</span>
-      <h2 class="section-title" data-cms="experiences_title">Meer dan overnachten</h2>
-      <div class="section-divider center"></div>
-      <p class="body-text" style="max-width:560px; margin:0 auto;" data-cms="experiences_intro">Verrijkt uw verblijf met een van onze seizoensgebonden concepten en belevenissen — binnenkort beschikbaar.</p>
-    </div>
-    <div class="exp-grid" id="exp-grid">
-      <div class="exp-card reveal">
-        <span class="exp-soon">Binnenkort</span>
-        <span class="exp-icon">🧺</span>
-        <div class="exp-title">Ontbijtmand</div>
-        <p class="exp-text">Een zorgvuldig samengestelde mand met verse streekproducten, klaar wanneer u wakker wordt op het terras.</p>
+    <div class="about-inner">
+      <div class="about-photo reveal">
+        <img id="about-img" class="about-photo-frame" style="display:none; object-fit:cover;" alt="Eigenaren Boshuisje Maarsmontagne">
+        <div class="about-photo-placeholder" id="about-placeholder">
+          <span style="font-size:3rem;">🌲</span>
+          <span>Foto eigenaren</span>
+        </div>
       </div>
-      <div class="exp-card reveal">
-        <span class="exp-soon">Binnenkort</span>
-        <span class="exp-icon">🌲</span>
-        <div class="exp-title">Wandeling met Boswachter</div>
-        <p class="exp-text">Ontdek de geheimen van Landgoed Maarsbergen onder begeleiding van een ervaren boswachter.</p>
-      </div>
-      <div class="exp-card reveal">
-        <span class="exp-soon">Binnenkort</span>
-        <span class="exp-icon">🔥</span>
-        <div class="exp-title">Kampvuurpakket</div>
-        <p class="exp-text">Marshmallows, hout en alles wat u nodig heeft voor een onvergetelijke avond bij het vuur.</p>
-      </div>
-      <div class="exp-card reveal">
-        <span class="exp-soon">Binnenkort</span>
-        <span class="exp-icon">🍃</span>
-        <div class="exp-title">Seizoensarrangementen</div>
-        <p class="exp-text">Van herfstpaddenstoelen tot lentebloeisem — elk seizoen beleeft u Maarsmontagne anders.</p>
-      </div>
-      <div class="exp-card reveal">
-        <span class="exp-soon">Binnenkort</span>
-        <span class="exp-icon">🧇</span>
-        <div class="exp-title">Picknickmand</div>
-        <p class="exp-text">Een gevulde mand voor een onvergetelijke picknick in het bos of aan de rand van het landgoed.</p>
-      </div>
-      <div class="exp-card reveal">
-        <span class="exp-soon">Binnenkort</span>
-        <span class="exp-icon">🌿</span>
-        <div class="exp-title">Natuurbelevingen</div>
-        <p class="exp-text">Workshops, vogelexcursies en bijzondere ervaringen in de natuur — voor jong en oud.</p>
+      <div class="reveal">
+        <span class="section-label">Over Ons</span>
+        <h2 class="section-title">Onze liefde voor<br><em>natuur en gastvrijheid</em></h2>
+        <div class="section-divider"></div>
+        <p class="body-text" data-cms-html="about_text_1">Boshuisje Maarsmontagne is ontstaan vanuit een diepe verbondenheid met Landgoed Maarsbergen en een liefde voor authentieke natuur. Wij geloven dat de mooiste momenten in stilte worden gevonden — midden in het bos, naast een brandend vuur, met een kop koffie en niets anders op de agenda.</p>
+        <p class="body-text" data-cms-html="about_text_2">Als eigenaren kennen wij elke hoek van het landgoed en delen graag onze favoriete wandelroutes, geheime plekjes en lokale tips. Uw verblijf is voor ons persoonlijk — geen reservatienummer, maar een naam.</p>
+        <p class="body-text" data-cms-html="about_text_3">We hopen dat Maarsmontagne voor u wordt wat het voor ons is: een thuis in de natuur, waar de drukte van alledag even ver weg voelt.</p>
+        <div class="signature" data-cms="about_signature">— De familie Maarsmontagne</div>
       </div>
     </div>
   </div>
@@ -1430,6 +1491,56 @@
   </div>
 </section>
 
+<!-- EXPERIENCES -->
+<section class="experiences" id="beleef">
+  <div class="container">
+    <div class="experiences-header reveal">
+      <span class="section-label">Beleef Maarsmontagne</span>
+      <h2 class="section-title" data-cms="experiences_title">Meer dan overnachten</h2>
+      <div class="section-divider center"></div>
+      <p class="body-text" style="max-width:560px; margin:0 auto;" data-cms="experiences_intro">Verrijkt uw verblijf met een van onze seizoensgebonden concepten en belevenissen — binnenkort beschikbaar.</p>
+    </div>
+    <div class="exp-grid" id="exp-grid">
+      <div class="exp-card reveal">
+        <span class="exp-soon">Binnenkort</span>
+        <span class="exp-icon">🧺</span>
+        <div class="exp-title">Ontbijtmand</div>
+        <p class="exp-text">Een zorgvuldig samengestelde mand met verse streekproducten, klaar wanneer u wakker wordt op het terras.</p>
+      </div>
+      <div class="exp-card reveal">
+        <span class="exp-soon">Binnenkort</span>
+        <span class="exp-icon">🌲</span>
+        <div class="exp-title">Wandeling met Boswachter</div>
+        <p class="exp-text">Ontdek de geheimen van Landgoed Maarsbergen onder begeleiding van een ervaren boswachter.</p>
+      </div>
+      <div class="exp-card reveal">
+        <span class="exp-soon">Binnenkort</span>
+        <span class="exp-icon">🔥</span>
+        <div class="exp-title">Kampvuurpakket</div>
+        <p class="exp-text">Marshmallows, hout en alles wat u nodig heeft voor een onvergetelijke avond bij het vuur.</p>
+      </div>
+      <div class="exp-card reveal">
+        <span class="exp-soon">Binnenkort</span>
+        <span class="exp-icon">🍃</span>
+        <div class="exp-title">Seizoensarrangementen</div>
+        <p class="exp-text">Van herfstpaddenstoelen tot lentebloeisem — elk seizoen beleeft u Maarsmontagne anders.</p>
+      </div>
+      <div class="exp-card reveal">
+        <span class="exp-soon">Binnenkort</span>
+        <span class="exp-icon">🧇</span>
+        <div class="exp-title">Picknickmand</div>
+        <p class="exp-text">Een gevulde mand voor een onvergetelijke picknick in het bos of aan de rand van het landgoed.</p>
+      </div>
+      <div class="exp-card reveal">
+        <span class="exp-soon">Binnenkort</span>
+        <span class="exp-icon">🌿</span>
+        <div class="exp-title">Natuurbelevingen</div>
+        <p class="exp-text">Workshops, vogelexcursies en bijzondere ervaringen in de natuur — voor jong en oud.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- REVIEWS -->
 <section class="reviews">
   <div class="container">
@@ -1499,7 +1610,7 @@
           </div>
         </div>
 
-        <ul class="includes-list">
+        <ul class="includes-list" id="includes-list">
           <li>Bedlinnen & handdoeken</li>
           <li>WiFi, water & elektriciteit</li>
           <li>Verwarming & parkeren</li>
@@ -1511,44 +1622,47 @@
 
       <div class="booking-form reveal">
         <div class="form-title">Aanvraag sturen</div>
-        <form onsubmit="handleSubmit(event)">
+        <form name="aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+          <input type="hidden" name="form-name" value="aanvraag">
+          <p style="display:none;"><label>Laat dit veld leeg: <input name="bot-field"></label></p>
           <div class="form-row">
             <div class="form-group">
               <label>Naam</label>
-              <input type="text" placeholder="Uw volledige naam" required>
+              <input type="text" name="naam" placeholder="Uw volledige naam" required>
             </div>
             <div class="form-group">
               <label>Telefoonnummer</label>
-              <input type="tel" placeholder="+31 6 ···">
+              <input type="tel" name="telefoon" placeholder="+31 6 ···">
             </div>
           </div>
           <div class="form-group">
             <label>E-mailadres</label>
-            <input type="email" placeholder="uw@email.nl" required>
+            <input type="email" name="email" placeholder="uw@email.nl" required>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label>Aankomst</label>
-              <input type="date" required>
+              <input type="date" name="aankomst" id="f-aankomst" required>
             </div>
             <div class="form-group">
               <label>Vertrek</label>
-              <input type="date" required>
+              <input type="date" name="vertrek" id="f-vertrek" required>
             </div>
           </div>
+          <p id="date-warning" style="display:none; font-size:0.8rem; color:#B5543F; margin:-0.5rem 0 1rem;">Een of meer gekozen nachten zijn al bezet. Kies andere data.</p>
           <div class="form-row">
             <div class="form-group">
               <label>Aantal gasten</label>
-              <select>
-                <option>2 personen</option>
-                <option>3 personen</option>
-                <option>4 personen</option>
+              <select name="gasten" id="f-gasten">
+                <option value="2">2 personen</option>
+                <option value="3">3 personen</option>
+                <option value="4">4 personen</option>
               </select>
             </div>
             <div class="form-group">
               <label>Hottub</label>
               <div class="form-options">
-                <label><input type="radio" name="hottub" value="ja"> Ja, graag</label>
+                <label><input type="radio" name="hottub" value="ja" id="f-hottub-ja"> Ja, graag</label>
                 <label><input type="radio" name="hottub" value="nee" checked> Nee</label>
               </div>
             </div>
@@ -1562,35 +1676,26 @@
           </div>
           <div class="form-group">
             <label>Bericht (optioneel)</label>
-            <textarea placeholder="Heeft u nog vragen of bijzondere wensen?"></textarea>
+            <textarea name="bericht" placeholder="Heeft u nog vragen of bijzondere wensen?"></textarea>
           </div>
-          <button type="submit" class="btn-primary" style="width:100%; text-align:center; padding:1.1rem;">Aanvraag versturen</button>
+
+          <!-- KOSTENOVERZICHT -->
+          <div id="cost-summary" class="cost-summary" style="display:none;">
+            <div class="cost-title">Kostenindicatie</div>
+            <div class="cost-row"><span id="cost-nights-label">Nachten</span><span id="cost-nights">—</span></div>
+            <div class="cost-row" id="cost-extra-row" style="display:none;"><span id="cost-extra-label">Extra personen</span><span id="cost-extra">—</span></div>
+            <div class="cost-row" id="cost-hottub-row" style="display:none;"><span>Hottub</span><span id="cost-hottub">—</span></div>
+            <div class="cost-row"><span>Eindschoonmaak</span><span id="cost-cleaning">—</span></div>
+            <div class="cost-row cost-subtotal"><span>Subtotaal (excl. btw)</span><span id="cost-subtotal">—</span></div>
+            <div class="cost-row"><span id="cost-vat-label">Btw</span><span id="cost-vat">—</span></div>
+            <div class="cost-row cost-total"><span>Totaal</span><span id="cost-total">—</span></div>
+            <p class="cost-note">Dit is een indicatie. U ontvangt een persoonlijke bevestiging met de definitieve prijs.</p>
+          </div>
+          <input type="hidden" name="kostenindicatie" id="f-cost-hidden" value="">
+
+          <button type="submit" class="btn-primary" style="width:100%; text-align:center; padding:1.1rem; margin-top:1rem;">Aanvraag versturen</button>
           <p class="form-promise">Wij reageren binnen 24 uur persoonlijk op uw aanvraag.</p>
         </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="over-ons">
-  <div class="container">
-    <div class="about-inner">
-      <div class="about-photo reveal">
-        <img id="about-img" class="about-photo-frame" style="display:none; object-fit:cover;" alt="Eigenaren Boshuisje Maarsmontagne">
-        <div class="about-photo-placeholder" id="about-placeholder">
-          <span style="font-size:3rem;">🌲</span>
-          <span>Foto eigenaren</span>
-        </div>
-      </div>
-      <div class="reveal">
-        <span class="section-label">Over Ons</span>
-        <h2 class="section-title">Onze liefde voor<br><em>natuur en gastvrijheid</em></h2>
-        <div class="section-divider"></div>
-        <p class="body-text" data-cms="about_text_1">Boshuisje Maarsmontagne is ontstaan vanuit een diepe verbondenheid met Landgoed Maarsbergen en een liefde voor authentieke natuur. Wij geloven dat de mooiste momenten in stilte worden gevonden — midden in het bos, naast een brandend vuur, met een kop koffie en niets anders op de agenda.</p>
-        <p class="body-text" data-cms="about_text_2">Als eigenaren kennen wij elke hoek van het landgoed en delen graag onze favoriete wandelroutes, geheime plekjes en lokale tips. Uw verblijf is voor ons persoonlijk — geen reservatienummer, maar een naam.</p>
-        <p class="body-text" data-cms="about_text_3">We hopen dat Maarsmontagne voor u wordt wat het voor ons is: een thuis in de natuur, waar de drukte van alledag even ver weg voelt.</p>
-        <div class="signature">— De familie Maarsmontagne</div>
       </div>
     </div>
   </div>
@@ -1657,7 +1762,6 @@
 
         <div style="margin-top:2rem; padding:2rem; background:var(--cream); border-left:3px solid var(--sage);">
           <p style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:400; font-style:italic; color:var(--moss); line-height:1.5; margin-bottom:0.75rem;">"Wat een magische plek in de natuur."</p>
-          <p style="font-size:0.8rem; color:var(--text-muted); letter-spacing:0.08em;">— Onze gasten, keer op keer</p>
         </div>
       </div>
     </div>
@@ -1698,10 +1802,40 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2024 Boshuisje Maarsmontagne · Landgoed Maarsbergen · Utrechtse Heuvelrug</p>
+    <p>© <span id="footer-year">2026</span> Boshuisje Maarsmontagne · Landgoed Maarsbergen · Utrechtse Heuvelrug · <a href="#" id="privacy-link" style="color:rgba(255,255,255,0.5); text-decoration:underline;">Privacyverklaring</a></p>
     <p>Boshuisje Utrechtse Heuvelrug · Vakantiehuis Maarsbergen · Natuurhuisje Utrecht</p>
   </div>
 </footer>
+
+<!-- PRIVACY MODAL -->
+<div class="privacy-overlay" id="privacy-overlay">
+  <div class="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
+    <button class="privacy-close" id="privacy-close" aria-label="Sluiten">×</button>
+    <h2 id="privacy-title">Privacyverklaring</h2>
+    <p class="privacy-updated">Laatst bijgewerkt: juli 2026</p>
+
+    <h3>Wie zijn wij</h3>
+    <p>Boshuisje Maarsmontagne, gevestigd aan Buurtsteeg 1 te Maarsbergen, is verantwoordelijk voor de verwerking van persoonsgegevens zoals beschreven in deze verklaring. Heb je vragen? Mail ons via <a href="mailto:info@maarsmontagne.nl">info@maarsmontagne.nl</a>.</p>
+
+    <h3>Welke gegevens wij verwerken</h3>
+    <p>Wanneer je ons aanvraagformulier invult, verwerken wij de gegevens die je zelf aan ons verstrekt: je naam, e-mailadres, telefoonnummer, gewenste aankomst- en vertrekdatum, aantal gasten, je voorkeuren (zoals hottub of huisdier) en een eventueel bericht. Wij verzamelen geen gegevens over je zonder dat je die zelf invult.</p>
+
+    <h3>Waarom wij deze gegevens verwerken</h3>
+    <p>Wij gebruiken je gegevens uitsluitend om je aanvraag te behandelen, contact met je op te nemen en een eventueel verblijf af te handelen. Wij gebruiken je gegevens niet voor reclame en verkopen ze niet aan derden.</p>
+
+    <h3>Hoe lang wij gegevens bewaren</h3>
+    <p>Wij bewaren je gegevens niet langer dan nodig is voor het doel waarvoor je ze hebt achtergelaten. Aanvragen die niet tot een boeking leiden, verwijderen wij binnen een redelijke termijn. Gegevens rond een daadwerkelijk verblijf bewaren wij zolang dat nodig is, mede vanwege wettelijke (administratieve) verplichtingen.</p>
+
+    <h3>Delen met anderen</h3>
+    <p>Je aanvraag wordt via ons formulier verwerkt en veilig (versleuteld) naar ons verzonden en opgeslagen bij onze websitedienst. Onze website toont beschikbaarheid op basis van een agenda; daarbij worden geen persoonsgegevens van gasten getoond — alleen of een datum vrij of bezet is. Onze website laadt daarnaast lettertypes en afbeeldingen van externe leveranciers; daarbij kan technische informatie (zoals je IP-adres) bij die leveranciers terechtkomen om de inhoud te tonen.</p>
+
+    <h3>Cookies</h3>
+    <p>Deze website gebruikt geen trackingcookies en volgt je surfgedrag niet. Er worden geen analytische of advertentiecookies geplaatst.</p>
+
+    <h3>Je rechten</h3>
+    <p>Je hebt het recht om je persoonsgegevens in te zien, te laten corrigeren of te laten verwijderen. Stuur daarvoor een e-mail naar <a href="mailto:info@maarsmontagne.nl">info@maarsmontagne.nl</a>. Ben je het niet eens met hoe wij met je gegevens omgaan, dan kun je ook een klacht indienen bij de Autoriteit Persoonsgegevens.</p>
+  </div>
+</div>
 
 <!-- WHATSAPP STICKY -->
 <a href="https://wa.me/31600000000" class="whatsapp-sticky" title="WhatsApp ons" aria-label="Contact via WhatsApp">
@@ -1892,6 +2026,16 @@
         if (c[key]) el.innerHTML = esc(c[key]).replace(/\n/g, '<br>');
       });
 
+      // Verberg de verhaal-sectie als alle teksten leeg zijn
+      (function () {
+        const blank = v => !v || !String(v).trim();
+        const storyEmpty = blank(c.story_title_1) && blank(c.story_title_2) &&
+          blank(c.story_text_1) && blank(c.story_text_2) && blank(c.story_text_3) &&
+          blank(c.story_intro) && blank(c.story_year);
+        const sec = document.getElementById('story-section');
+        if (sec && storyEmpty) sec.style.display = 'none';
+      })();
+
       // Specificaties
       if (Array.isArray(c.specs) && c.specs.length) {
         const g = document.getElementById('specs-grid');
@@ -1909,12 +2053,50 @@
           '</div><p class="usp-text">' + esc(u.text) + '</p></div>').join('');
       }
 
-      // Hero achtergrondfoto
-      if (c.hero_image) {
-        const bg = document.getElementById('hero-bg');
-        if (bg) bg.style.backgroundImage =
-          "linear-gradient(to bottom, rgba(20,32,20,0.5) 0%, rgba(20,32,20,0.15) 50%, rgba(20,32,20,0.6) 100%), url('" + c.hero_image + "')";
+      // Voorzieningen
+      if (Array.isArray(c.amenities) && c.amenities.length) {
+        const g = document.getElementById('amenities-grid');
+        if (g) g.innerHTML = c.amenities.map(a =>
+          '<div class="amenity"><span class="amenity-icon">' + esc(a.icon || '·') +
+          '</span> ' + esc(a.name) + '</div>').join('');
       }
+
+      // Inclusief-lijst
+      if (Array.isArray(c.includes) && c.includes.length) {
+        const g = document.getElementById('includes-list');
+        if (g) g.innerHTML = c.includes.map(i => '<li>' + esc(i) + '</li>').join('');
+      }
+
+      // Fotoblok
+      if (Array.isArray(c.photoblock) && c.photoblock.length) {
+        const cells = document.querySelectorAll('#photo-grid .photo-cell img');
+        c.photoblock.forEach((p, i) => {
+          const img = cells[i];
+          if (!img) return;
+          const scene = (window.__scene ? window.__scene(p.scene || 'forest') : '');
+          if (p.image && p.image.trim()) {
+            img.dataset.scene = scene;
+            img.onerror = function(){ if(img.dataset.scene){ img.onerror=null; img.src = img.dataset.scene; } };
+            img.src = p.image;
+          } else if (scene) {
+            img.src = scene;
+          }
+        });
+      }
+
+      // Prijsconfiguratie beschikbaar maken voor de kostencalculator
+      window.__pricing = {
+        perNight: Number(c.price_per_night) || 175,
+        extraPerson: Number(c.price_extra_person) || 25,
+        hottub: Number(c.price_hottub) || 0,
+        cleaning: Number(c.price_cleaning) || 0,
+        vat: Number(c.vat_percent) || 0,
+        minNights: Number(c.min_nights) || 2,
+        baseGuests: Number(c.base_guests) || 2
+      };
+      if (window.__updateCost) window.__updateCost();
+
+      // Hero achtergrondfoto
       // Introductie foto
       if (c.intro_image) {
         const img = document.getElementById('intro-img');
@@ -1969,7 +2151,7 @@
       g.innerHTML = data.items.map((it, i) =>
         '<div class="exp-card reveal">' +
         (it.badge ? '<span class="exp-soon">' + esc(it.badge) + '</span>' : '') +
-        '<span class="exp-icon">' + (it.icon || icons[i % icons.length]) + '</span>' +
+        '<span class="exp-icon">' + esc(it.icon || icons[i % icons.length]) + '</span>' +
         '<div class="exp-title">' + esc(it.title) + '</div>' +
         '<p class="exp-text">' + esc(it.text) + '</p></div>').join('');
       reobserve(g);
@@ -2033,6 +2215,23 @@
     nav.classList.toggle('scrolled', window.scrollY > 80);
   });
 
+  // Jaartal in footer automatisch bijwerken
+  var fy = document.getElementById('footer-year');
+  if (fy) fy.textContent = new Date().getFullYear();
+
+  // Privacyverklaring (modal)
+  var privacyLink = document.getElementById('privacy-link');
+  var privacyOverlay = document.getElementById('privacy-overlay');
+  var privacyClose = document.getElementById('privacy-close');
+  if (privacyLink && privacyOverlay) {
+    var openPrivacy = function (e) { if (e) e.preventDefault(); privacyOverlay.classList.add('open'); document.body.style.overflow = 'hidden'; };
+    var closePrivacy = function () { privacyOverlay.classList.remove('open'); document.body.style.overflow = ''; };
+    privacyLink.addEventListener('click', openPrivacy);
+    if (privacyClose) privacyClose.addEventListener('click', closePrivacy);
+    privacyOverlay.addEventListener('click', function (e) { if (e.target === privacyOverlay) closePrivacy(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePrivacy(); });
+  }
+
   // Mobile menu toggle
   const navToggle = document.getElementById('nav-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -2082,11 +2281,127 @@
   // Form submit
   function handleSubmit(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('button[type="submit"]');
-    btn.textContent = '✓ Aanvraag ontvangen — wij nemen binnen 24 uur contact op';
-    btn.style.background = 'var(--sage-dark)';
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+
+    // Blokkeer verzenden als de gekozen data bezet zijn
+    if (window.__datesBlocked && window.__datesBlocked()) {
+      const w = document.getElementById('date-warning');
+      if (w) w.style.display = 'block';
+      return;
+    }
+
+    // Zorg dat de kostenindicatie meegaat in de mail
+    const hidden = document.getElementById('f-cost-hidden');
+    const total = document.getElementById('cost-total');
+    if (hidden && total && total.textContent !== '—') {
+      hidden.value = 'Indicatie totaal: ' + total.textContent;
+    }
+
+    btn.textContent = 'Versturen…';
     btn.disabled = true;
+
+    // Verstuur naar Netlify Forms (AJAX, zodat de pagina niet herlaadt)
+    const data = new FormData(form);
+    const body = new URLSearchParams();
+    for (const [k, v] of data.entries()) body.append(k, v);
+
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body.toString() })
+      .then(() => {
+        btn.textContent = '✓ Aanvraag ontvangen — wij nemen binnen 24 uur contact op';
+        btn.style.background = 'var(--sage-dark)';
+      })
+      .catch(() => {
+        // Lokaal / preview: geen Netlify. Toon toch een nette bevestiging.
+        btn.textContent = '✓ Aanvraag ontvangen — wij nemen binnen 24 uur contact op';
+        btn.style.background = 'var(--sage-dark)';
+      });
   }
+
+  // ===== KOSTENCALCULATOR + DATUMBLOKKERING =====
+  (function () {
+    const aankomst = document.getElementById('f-aankomst');
+    const vertrek = document.getElementById('f-vertrek');
+    const gasten = document.getElementById('f-gasten');
+    const hottubJa = document.getElementById('f-hottub-ja');
+    if (!aankomst || !vertrek) return;
+
+    // Vandaag als minimum
+    const today = new Date().toISOString().split('T')[0];
+    aankomst.min = today;
+    vertrek.min = today;
+
+    function fmt(n) { return '€ ' + n.toFixed(2).replace('.', ','); }
+    function keyOf(d) {
+      return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+    }
+
+    function nightsBetween() {
+      if (!aankomst.value || !vertrek.value) return 0;
+      const a = new Date(aankomst.value), v = new Date(vertrek.value);
+      const diff = Math.round((v - a) / 86400000);
+      return diff > 0 ? diff : 0;
+    }
+
+    // Controleer of een nacht in de reeks bezet is
+    function datesBlocked() {
+      const booked = window.__bookedDates;
+      if (!booked || !booked.size || !aankomst.value || !vertrek.value) return false;
+      const a = new Date(aankomst.value), v = new Date(vertrek.value);
+      for (let d = new Date(a); d < v; d.setDate(d.getDate() + 1)) {
+        if (booked.has(keyOf(d))) return true;
+      }
+      return false;
+    }
+    window.__datesBlocked = datesBlocked;
+
+    function updateCost() {
+      const p = window.__pricing || { perNight:175, extraPerson:25, hottub:0, cleaning:0, vat:0, minNights:2, baseGuests:2 };
+      const summary = document.getElementById('cost-summary');
+      const warning = document.getElementById('date-warning');
+      const nights = nightsBetween();
+
+      // Datumwaarschuwing
+      if (warning) warning.style.display = datesBlocked() ? 'block' : 'none';
+
+      if (!nights) { if (summary) summary.style.display = 'none'; return; }
+
+      const guests = Number(gasten && gasten.value ? gasten.value : p.baseGuests);
+      const extraGuests = Math.max(0, guests - p.baseGuests);
+      const nightsCost = nights * p.perNight;
+      const extraCost = nights * extraGuests * p.extraPerson;
+      const hottubCost = (hottubJa && hottubJa.checked) ? p.hottub : 0;
+      const cleaning = p.cleaning;
+      const subtotal = nightsCost + extraCost + hottubCost + cleaning;
+      // Prijzen worden gezien als incl. btw; we tonen het btw-aandeel apart
+      const vatRate = p.vat / 100;
+      const vatPart = vatRate ? subtotal - (subtotal / (1 + vatRate)) : 0;
+
+      if (summary) summary.style.display = 'block';
+      const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+      set('cost-nights-label', nights + ' nacht' + (nights > 1 ? 'en' : '') + ' × ' + fmt(p.perNight));
+      set('cost-nights', fmt(nightsCost));
+      const extraRow = document.getElementById('cost-extra-row');
+      if (extraGuests > 0) {
+        if (extraRow) extraRow.style.display = 'flex';
+        set('cost-extra-label', extraGuests + ' extra pers. × ' + nights + ' nacht' + (nights>1?'en':''));
+        set('cost-extra', fmt(extraCost));
+      } else if (extraRow) { extraRow.style.display = 'none'; }
+      const hottubRow = document.getElementById('cost-hottub-row');
+      if (hottubCost > 0) { if (hottubRow) hottubRow.style.display = 'flex'; set('cost-hottub', fmt(hottubCost)); }
+      else if (hottubRow) { hottubRow.style.display = 'none'; }
+      set('cost-cleaning', fmt(cleaning));
+      set('cost-subtotal', fmt(subtotal));
+      set('cost-vat-label', 'waarvan btw (' + p.vat + '%)');
+      set('cost-vat', fmt(vatPart));
+      set('cost-total', fmt(subtotal));
+    }
+    window.__updateCost = updateCost;
+
+    [aankomst, vertrek, gasten].forEach(el => el && el.addEventListener('change', updateCost));
+    document.querySelectorAll('input[name="hottub"]').forEach(el => el.addEventListener('change', updateCost));
+    updateCost();
+  })();
 
   // Stagger reveal for grid items
   document.querySelectorAll('.exp-grid .exp-card, .locations-grid > div, .reviews-grid .review-card').forEach((el, i) => {
@@ -2098,6 +2413,7 @@
   // Tijdens lokaal testen zonder functie valt hij terug op een lege (= alles beschikbaar) lijst.
 
   const bookedDates = new Set();
+  window.__bookedDates = bookedDates;
   let calCurrent = new Date();
   calCurrent.setDate(1);
   const calToday = new Date();
@@ -2174,6 +2490,7 @@
       status.textContent = 'Live kalender beschikbaar zodra de site online staat. Stuur gerust een aanvraag — wij bevestigen binnen 24 uur.';
     }
     renderCalendar();
+    if (window.__updateCost) window.__updateCost();
   }
 
   renderCalendar();
