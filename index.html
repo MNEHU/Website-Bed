@@ -1659,20 +1659,6 @@
                 <option value="4">4 personen</option>
               </select>
             </div>
-            <div class="form-group">
-              <label>Hottub</label>
-              <div class="form-options">
-                <label><input type="radio" name="hottub" value="ja" id="f-hottub-ja"> Ja, graag</label>
-                <label><input type="radio" name="hottub" value="nee" checked> Nee</label>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Huisdier mee?</label>
-            <div class="form-options">
-              <label><input type="radio" name="huisdier" value="ja"> Ja</label>
-              <label><input type="radio" name="huisdier" value="nee" checked> Nee</label>
-            </div>
           </div>
           <div class="form-group">
             <label>Bericht (optioneel)</label>
@@ -1684,7 +1670,6 @@
             <div class="cost-title">Kostenindicatie</div>
             <div class="cost-row"><span id="cost-nights-label">Nachten</span><span id="cost-nights">—</span></div>
             <div class="cost-row" id="cost-extra-row" style="display:none;"><span id="cost-extra-label">Extra personen</span><span id="cost-extra">—</span></div>
-            <div class="cost-row" id="cost-hottub-row" style="display:none;"><span>Hottub</span><span id="cost-hottub">—</span></div>
             <div class="cost-row"><span>Eindschoonmaak</span><span id="cost-cleaning">—</span></div>
             <div class="cost-row cost-subtotal"><span>Subtotaal (excl. btw)</span><span id="cost-subtotal">—</span></div>
             <div class="cost-row"><span id="cost-vat-label">Btw</span><span id="cost-vat">—</span></div>
@@ -1802,7 +1787,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© <span id="footer-year">2026</span> Boshuisje Maarsmontagne · Landgoed Maarsbergen · Utrechtse Heuvelrug · <a href="#" id="privacy-link" style="color:rgba(255,255,255,0.5); text-decoration:underline;">Privacyverklaring</a></p>
+    <p>© <span id="footer-year">2026</span> Boshuisje Maarsmontagne · Landgoed Maarsbergen · Utrechtse Heuvelrug · <a href="#" id="privacy-link" style="color:rgba(255,255,255,0.5); text-decoration:underline;">Privacyverklaring</a><span id="terms-sep" style="display:none;"> · <a href="#" id="terms-link" style="color:rgba(255,255,255,0.5); text-decoration:underline;">Algemene voorwaarden</a></span></p>
     <p>Boshuisje Utrechtse Heuvelrug · Vakantiehuis Maarsbergen · Natuurhuisje Utrecht</p>
   </div>
 </footer>
@@ -1834,6 +1819,15 @@
 
     <h3>Je rechten</h3>
     <p>Je hebt het recht om je persoonsgegevens in te zien, te laten corrigeren of te laten verwijderen. Stuur daarvoor een e-mail naar <a href="mailto:info@maarsmontagne.nl">info@maarsmontagne.nl</a>. Ben je het niet eens met hoe wij met je gegevens omgaan, dan kun je ook een klacht indienen bij de Autoriteit Persoonsgegevens.</p>
+  </div>
+</div>
+
+<!-- ALGEMENE VOORWAARDEN MODAL -->
+<div class="privacy-overlay" id="terms-overlay">
+  <div class="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="terms-title">
+    <button class="privacy-close" id="terms-close" aria-label="Sluiten">×</button>
+    <h2 id="terms-title">Algemene voorwaarden</h2>
+    <div id="terms-body"></div>
   </div>
 </div>
 
@@ -2096,7 +2090,26 @@
       };
       if (window.__updateCost) window.__updateCost();
 
-      // Hero achtergrondfoto
+      // Algemene voorwaarden (tonen als er tekst is)
+      if (c.terms_text && String(c.terms_text).trim()) {
+        const body = document.getElementById('terms-body');
+        const sep = document.getElementById('terms-sep');
+        if (body) body.innerHTML = '<p>' + esc(c.terms_text).replace(/\n\n+/g, '</p><p>').replace(/\n/g, '<br>') + '</p>';
+        if (sep) sep.style.display = 'inline';
+      }
+
+      // Hero achtergrondfoto (alleen toepassen als de foto echt laadt)
+      if (c.hero_image) {
+        const bg = document.getElementById('hero-bg');
+        if (bg) {
+          const test = new Image();
+          test.onload = function () {
+            bg.style.backgroundImage =
+              "linear-gradient(to bottom, rgba(20,32,20,0.5) 0%, rgba(20,32,20,0.15) 50%, rgba(20,32,20,0.6) 100%), url('" + c.hero_image + "')";
+          };
+          test.src = c.hero_image;
+        }
+      }
       // Introductie foto
       if (c.intro_image) {
         const img = document.getElementById('intro-img');
@@ -2232,6 +2245,19 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePrivacy(); });
   }
 
+  // Algemene voorwaarden (modal)
+  var termsLink = document.getElementById('terms-link');
+  var termsOverlay = document.getElementById('terms-overlay');
+  var termsClose = document.getElementById('terms-close');
+  if (termsLink && termsOverlay) {
+    var openTerms = function (e) { if (e) e.preventDefault(); termsOverlay.classList.add('open'); document.body.style.overflow = 'hidden'; };
+    var closeTerms = function () { termsOverlay.classList.remove('open'); document.body.style.overflow = ''; };
+    termsLink.addEventListener('click', openTerms);
+    if (termsClose) termsClose.addEventListener('click', closeTerms);
+    termsOverlay.addEventListener('click', function (e) { if (e.target === termsOverlay) closeTerms(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeTerms(); });
+  }
+
   // Mobile menu toggle
   const navToggle = document.getElementById('nav-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -2335,10 +2361,16 @@
     function keyOf(d) {
       return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
     }
+    // Parseer 'YYYY-MM-DD' naar een lokale datum (voorkomt tijdzone-verschuiving)
+    function parseLocal(s) {
+      if (!s) return null;
+      const p = s.split('-');
+      return new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]));
+    }
 
     function nightsBetween() {
-      if (!aankomst.value || !vertrek.value) return 0;
-      const a = new Date(aankomst.value), v = new Date(vertrek.value);
+      const a = parseLocal(aankomst.value), v = parseLocal(vertrek.value);
+      if (!a || !v) return 0;
       const diff = Math.round((v - a) / 86400000);
       return diff > 0 ? diff : 0;
     }
@@ -2346,8 +2378,8 @@
     // Controleer of een nacht in de reeks bezet is
     function datesBlocked() {
       const booked = window.__bookedDates;
-      if (!booked || !booked.size || !aankomst.value || !vertrek.value) return false;
-      const a = new Date(aankomst.value), v = new Date(vertrek.value);
+      const a = parseLocal(aankomst.value), v = parseLocal(vertrek.value);
+      if (!booked || !booked.size || !a || !v) return false;
       for (let d = new Date(a); d < v; d.setDate(d.getDate() + 1)) {
         if (booked.has(keyOf(d))) return true;
       }
@@ -2387,9 +2419,6 @@
         set('cost-extra-label', extraGuests + ' extra pers. × ' + nights + ' nacht' + (nights>1?'en':''));
         set('cost-extra', fmt(extraCost));
       } else if (extraRow) { extraRow.style.display = 'none'; }
-      const hottubRow = document.getElementById('cost-hottub-row');
-      if (hottubCost > 0) { if (hottubRow) hottubRow.style.display = 'flex'; set('cost-hottub', fmt(hottubCost)); }
-      else if (hottubRow) { hottubRow.style.display = 'none'; }
       set('cost-cleaning', fmt(cleaning));
       set('cost-subtotal', fmt(subtotal));
       set('cost-vat-label', 'waarvan btw (' + p.vat + '%)');
@@ -2399,7 +2428,6 @@
     window.__updateCost = updateCost;
 
     [aankomst, vertrek, gasten].forEach(el => el && el.addEventListener('change', updateCost));
-    document.querySelectorAll('input[name="hottub"]').forEach(el => el.addEventListener('change', updateCost));
     updateCost();
   })();
 
