@@ -63,13 +63,42 @@ collections:
 
           - { name: "surroundings_intro", label: "Omgeving - introtekst", widget: "text" }
 
-          - { name: "price_main", label: "Prijs per nacht (cijfer)", widget: "string" }
-          - { name: "price_extra", label: "Prijs extra persoon", widget: "string" }
-          - { name: "price_min_nights", label: "Minimaal aantal nachten", widget: "string" }
+          - { name: "price_main", label: "Prijs per nacht (weergavetekst)", widget: "string" }
+          - { name: "price_extra", label: "Prijs extra persoon (weergavetekst)", widget: "string" }
+          - { name: "price_min_nights", label: "Minimaal aantal nachten (weergavetekst)", widget: "string" }
+
+          - { name: "price_per_night", label: "Prijsberekening: per nacht (bedrag, bv. 175)", widget: "number", value_type: "int", min: 0 }
+          - { name: "price_extra_person", label: "Prijsberekening: extra persoon per nacht", widget: "number", value_type: "int", min: 0 }
+          - { name: "price_hottub", label: "Prijsberekening: hottub-toeslag per verblijf", widget: "number", value_type: "int", min: 0 }
+          - { name: "price_cleaning", label: "Prijsberekening: eindschoonmaak per verblijf", widget: "number", value_type: "int", min: 0 }
+          - { name: "vat_percent", label: "Btw-percentage (bv. 9)", widget: "number", value_type: "int", min: 0, max: 100 }
+          - { name: "min_nights", label: "Minimaal aantal nachten (getal)", widget: "number", value_type: "int", min: 1 }
+          - { name: "base_guests", label: "Aantal personen in basisprijs", widget: "number", value_type: "int", min: 1 }
+
+          - name: "amenities"
+            label: "Voorzieningen"
+            widget: "list"
+            fields:
+              - { name: "icon", label: "Icoon (emoji)", widget: "string" }
+              - { name: "name", label: "Naam", widget: "string" }
+
+          - name: "includes"
+            label: "Inclusief-lijst (bij prijzen)"
+            widget: "list"
+            field: { name: "item", label: "Regel", widget: "string" }
+
+          - name: "photoblock"
+            label: "Fotoblok (5 blokken)"
+            widget: "list"
+            max: 5
+            fields:
+              - { name: "image", label: "Foto (optioneel; leeg = illustratie)", widget: "image", required: false }
+              - { name: "scene", label: "Type illustratie als er geen foto is", widget: "select", required: false, options: ["interior","terrace","forest","fire","lake","heath","house","pyramid"], default: "forest" }
 
           - { name: "about_text_1", label: "Over ons - alinea 1", widget: "text" }
           - { name: "about_text_2", label: "Over ons - alinea 2", widget: "text" }
           - { name: "about_text_3", label: "Over ons - alinea 3", widget: "text" }
+          - { name: "about_signature", label: "Over ons - ondertekening", widget: "string" }
           - { name: "about_image", label: "Over ons - foto eigenaren", widget: "image", required: false }
 
           - { name: "contact_phone", label: "Telefoonnummer", widget: "string" }
