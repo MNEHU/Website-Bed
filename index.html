@@ -1625,35 +1625,35 @@
         <form name="aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
           <input type="hidden" name="form-name" value="aanvraag">
           <p style="display:none;"><label>Laat dit veld leeg: <input name="bot-field"></label></p>
+          <div class="form-group">
+            <label>Naam</label>
+            <input type="text" name="Naam" placeholder="Uw volledige naam" required>
+          </div>
           <div class="form-row">
             <div class="form-group">
-              <label>Naam</label>
-              <input type="text" name="naam" placeholder="Uw volledige naam" required>
+              <label>E-mailadres</label>
+              <input type="email" name="E-mailadres" placeholder="uw@email.nl" required>
             </div>
             <div class="form-group">
               <label>Telefoonnummer</label>
-              <input type="tel" name="telefoon" placeholder="+31 6 ···">
+              <input type="tel" name="Telefoonnummer" placeholder="+31 6 ···">
             </div>
-          </div>
-          <div class="form-group">
-            <label>E-mailadres</label>
-            <input type="email" name="email" placeholder="uw@email.nl" required>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label>Aankomst</label>
-              <input type="date" name="aankomst" id="f-aankomst" required>
+              <input type="date" name="Aankomst" id="f-aankomst" required>
             </div>
             <div class="form-group">
               <label>Vertrek</label>
-              <input type="date" name="vertrek" id="f-vertrek" required>
+              <input type="date" name="Vertrek" id="f-vertrek" required>
             </div>
           </div>
           <p id="date-warning" style="display:none; font-size:0.8rem; color:#B5543F; margin:-0.5rem 0 1rem;">Een of meer gekozen nachten zijn al bezet. Kies andere data.</p>
           <div class="form-row">
             <div class="form-group">
               <label>Aantal gasten</label>
-              <select name="gasten" id="f-gasten">
+              <select name="Aantal gasten" id="f-gasten">
                 <option value="2">2 personen</option>
                 <option value="3">3 personen</option>
                 <option value="4">4 personen</option>
@@ -1662,7 +1662,7 @@
           </div>
           <div class="form-group">
             <label>Bericht (optioneel)</label>
-            <textarea name="bericht" placeholder="Heeft u nog vragen of bijzondere wensen?"></textarea>
+            <textarea name="Bericht" placeholder="Heeft u nog vragen of bijzondere wensen?"></textarea>
           </div>
 
           <!-- KOSTENOVERZICHT -->
@@ -1676,7 +1676,7 @@
             <div class="cost-row cost-total"><span>Totaal</span><span id="cost-total">—</span></div>
             <p class="cost-note">Dit is een indicatie. U ontvangt een persoonlijke bevestiging met de definitieve prijs.</p>
           </div>
-          <input type="hidden" name="kostenindicatie" id="f-cost-hidden" value="">
+          <input type="hidden" name="Kostenindicatie" id="f-cost-hidden" value="">
 
           <button type="submit" class="btn-primary" style="width:100%; text-align:center; padding:1.1rem; margin-top:1rem;">Aanvraag versturen</button>
           <p class="form-promise">Wij reageren binnen 24 uur persoonlijk op uw aanvraag.</p>
