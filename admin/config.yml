@@ -106,6 +106,8 @@ collections:
           - { name: "contact_whatsapp", label: "WhatsApp-nummer (alleen cijfers, bv. 31612345678)", widget: "string" }
           - { name: "contact_instagram", label: "Instagram gebruikersnaam", widget: "string" }
 
+          - { name: "terms_text", label: "Algemene voorwaarden (leeg = geen link onderaan)", widget: "text", required: false }
+
       # ---------- BELEEF-KAARTEN ----------
       - name: "experiences"
         label: "Beleef Maarsmontagne (kaarten)"
