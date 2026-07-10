@@ -3,8 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Boshuisje Maarsmontagne – Ontsnap aan de drukte op Landgoed Maarsbergen</title>
-<meta name="description" content="Verblijf in een historische schuur uit 1900 midden op de Utrechtse Heuvelrug. Natuur begint bij de voordeur. Boshuisje Maarsmontagne op Landgoed Maarsbergen.">
+<title>Boshuisje Maarsmontagne – Vakantiehuis in het bos op de Utrechtse Heuvelrug</title>
+<meta name="description" content="Boshuisje Maarsmontagne: een sfeervol vakantiehuis in een gerenoveerde schuur uit 1900 op Landgoed Maarsbergen, midden op de Utrechtse Heuvelrug. Natuur begint bij de voordeur. Ideaal voor een weekend weg voor twee.">
+<meta name="keywords" content="boshuisje Utrechtse Heuvelrug, vakantiehuis Maarsbergen, huisje in het bos Utrechtse Heuvelrug, natuurhuisje Utrecht, boshuisje met houtkachel, weekend weg Utrechtse Heuvelrug, vakantiehuis Landgoed Maarsbergen, huisje in het bos Nederland">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Boshuisje Maarsmontagne">
+<link rel="canonical" href="https://maarsmontagne.nl/">
+
+<!-- Open Graph (voor delen op social media / WhatsApp) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:site_name" content="Boshuisje Maarsmontagne">
+<meta property="og:title" content="Boshuisje Maarsmontagne – Vakantiehuis in het bos op de Utrechtse Heuvelrug">
+<meta property="og:description" content="Een sfeervol vakantiehuis in een gerenoveerde schuur uit 1900 op Landgoed Maarsbergen. Ontsnap aan de drukte en geniet van de natuur.">
+<meta property="og:url" content="https://maarsmontagne.nl/">
+<meta property="og:image" content="https://maarsmontagne.nl/images/uploads/leersumseveld-0983-small.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Boshuisje Maarsmontagne – Vakantiehuis op de Utrechtse Heuvelrug">
+<meta name="twitter:description" content="Een sfeervol vakantiehuis in het bos op Landgoed Maarsbergen. Ontsnap aan de drukte.">
+<meta name="twitter:image" content="https://maarsmontagne.nl/images/uploads/leersumseveld-0983-small.jpg">
+
+<!-- Gestructureerde data: helpt Google je te tonen als vakantieverblijf -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Boshuisje Maarsmontagne",
+  "description": "Sfeervol vakantiehuis in een gerenoveerde schuur uit 1900 op Landgoed Maarsbergen, midden op de Utrechtse Heuvelrug.",
+  "url": "https://maarsmontagne.nl/",
+  "image": "https://maarsmontagne.nl/images/uploads/leersumseveld-0983-small.jpg",
+  "email": "info@maarsmontagne.nl",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Buurtsteeg 1",
+    "addressLocality": "Maarsbergen",
+    "addressCountry": "NL"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 52.0483048,
+    "longitude": 5.3953926
+  },
+  "petsAllowed": true,
+  "numberOfRooms": 1,
+  "priceRange": "€€",
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Houtkachel", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "WiFi", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Eigen tuin", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Volledige keuken", "value": true }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -780,6 +830,17 @@
   }
   .cal-day.past { background: transparent; color: #ccc; }
   .cal-day.today { border: 1px solid var(--sage); font-weight: 500; }
+  .cal-day.special::after {
+    content: '';
+    position: absolute;
+    top: 4px; right: 4px;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--sand);
+  }
+  .cal-day.available:hover { background: var(--sage-light); color: var(--white); }
+  .cal-day.sel-start, .cal-day.sel-end { background: var(--sage); color: var(--white); font-weight: 500; }
+  .cal-day.in-range { background: var(--sage-light); color: var(--white); }
   .cal-legend {
     display: flex;
     gap: 1.5rem;
@@ -1573,27 +1634,6 @@
 <section class="booking" id="beschikbaarheid">
   <div class="container">
 
-    <div class="calendar-wrap reveal">
-      <span class="section-label">Beschikbaarheid</span>
-      <h2 class="section-title">Bekijk de <em>kalender</em></h2>
-      <div class="section-divider center"></div>
-      <p class="body-text" style="max-width:540px; margin:0 auto;">De kalender wordt automatisch bijgewerkt op basis van onze boekingen via Airbnb, Booking.com en Google Calendar.</p>
-
-      <div class="calendar-card">
-        <div class="cal-header">
-          <button class="cal-nav-btn" id="cal-prev" aria-label="Vorige maand">‹</button>
-          <div class="cal-month-label" id="cal-month">—</div>
-          <button class="cal-nav-btn" id="cal-next" aria-label="Volgende maand">›</button>
-        </div>
-        <div class="cal-grid" id="cal-grid"></div>
-        <div class="cal-legend">
-          <span><span class="cal-legend-dot" style="background:var(--white);"></span> Beschikbaar</span>
-          <span><span class="cal-legend-dot" style="background:var(--cream-dark);"></span> Bezet</span>
-        </div>
-        <p class="cal-status" id="cal-status">Beschikbaarheid laden…</p>
-      </div>
-    </div>
-
     <div class="booking-inner">
       <div class="booking-info reveal">
         <span class="section-label">Beschikbaarheid</span>
@@ -1639,17 +1679,28 @@
               <input type="tel" name="Telefoonnummer" placeholder="+31 6 ···">
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Aankomst</label>
-              <input type="date" name="Aankomst" id="f-aankomst" required>
+          <div class="form-group">
+            <label>Kies je data</label>
+            <div class="calendar-card" style="margin:0.5rem 0 0; background:var(--white); padding:1.25rem;">
+              <div class="cal-header">
+                <button type="button" class="cal-nav-btn" id="cal-prev" aria-label="Vorige maand">‹</button>
+                <div class="cal-month-label" id="cal-month">—</div>
+                <button type="button" class="cal-nav-btn" id="cal-next" aria-label="Volgende maand">›</button>
+              </div>
+              <div class="cal-grid" id="cal-grid"></div>
+              <div class="cal-legend">
+                <span><span class="cal-legend-dot" style="background:var(--white);"></span> Beschikbaar</span>
+                <span><span class="cal-legend-dot" style="background:var(--cream-dark);"></span> Bezet</span>
+                <span><span class="cal-legend-dot" style="background:var(--white); position:relative;"><span style="position:absolute; top:2px; right:2px; width:5px; height:5px; border-radius:50%; background:var(--sand);"></span></span> Afwijkende prijs</span>
+                <span><span class="cal-legend-dot" style="background:var(--sage);"></span> Jouw keuze</span>
+              </div>
+              <p class="cal-status" id="cal-status">Beschikbaarheid laden…</p>
             </div>
-            <div class="form-group">
-              <label>Vertrek</label>
-              <input type="date" name="Vertrek" id="f-vertrek" required>
-            </div>
+            <div id="sel-display" style="margin-top:0.75rem; font-size:0.9rem; color:var(--text-muted);">Klik een aankomst- en vertrekdag aan in de kalender.</div>
+            <input type="hidden" name="Aankomst" id="f-aankomst" required>
+            <input type="hidden" name="Vertrek" id="f-vertrek" required>
           </div>
-          <p id="date-warning" style="display:none; font-size:0.8rem; color:#B5543F; margin:-0.5rem 0 1rem;">Een of meer gekozen nachten zijn al bezet. Kies andere data.</p>
+          <p id="date-warning" style="display:none; font-size:0.8rem; color:#B5543F; margin:-0.25rem 0 1rem;">Een of meer gekozen nachten zijn al bezet. Kies andere data.</p>
           <div class="form-row">
             <div class="form-group">
               <label>Aantal gasten</label>
@@ -1736,7 +1787,7 @@
       </div>
 
       <div class="reveal">
-        <a href="https://maps.google.com/?q=Buurtsteeg+1+Maarsbergen" target="_blank" class="map-placeholder">
+        <a href="https://www.google.com/maps/place/Boshuisje+Maarsmontagne/@52.0483048,5.3953926,17z/data=!3m1!4b1!4m6!3m5!1s0x47c65b6ed3fc1b05:0xb506c0be73cfdb2f!8m2!3d52.0483048!4d5.3953926!16s%2Fg%2F11nr116zfl" target="_blank" rel="noopener" class="map-placeholder">
           <span class="map-pin">📍</span>
           <span style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--moss);">Boshuisje Maarsmontagne</span>
           <span style="font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--sage);">Bekijk op Google Maps →</span>
@@ -2086,9 +2137,11 @@
         cleaning: Number(c.price_cleaning) || 0,
         vat: Number(c.vat_percent) || 0,
         minNights: Number(c.min_nights) || 2,
-        baseGuests: Number(c.base_guests) || 2
+        baseGuests: Number(c.base_guests) || 2,
+        periods: Array.isArray(c.price_periods) ? c.price_periods : []
       };
       if (window.__updateCost) window.__updateCost();
+      if (window.__renderCalendar) window.__renderCalendar();
 
       // Algemene voorwaarden (tonen als er tekst is)
       if (c.terms_text && String(c.terms_text).trim()) {
@@ -2387,6 +2440,34 @@
     }
     window.__datesBlocked = datesBlocked;
 
+    // Prijs per nacht voor een specifieke datum (checkt prijsperiodes, anders basisprijs)
+    function priceForKey(key) {
+      const p = window.__pricing || {};
+      const base = Number(p.perNight) || 175;
+      const periods = Array.isArray(p.periods) ? p.periods : [];
+      for (const per of periods) {
+        if (per && per.start && per.end && key >= per.start && key <= per.end && per.price) {
+          return Number(per.price);
+        }
+      }
+      return base;
+    }
+    window.__priceForKey = priceForKey;
+
+    // Som van de nachtprijzen over de gekozen periode + of er afwijkende prijzen zijn
+    function stayCost() {
+      const a = parseLocal(aankomst.value), v = parseLocal(vertrek.value);
+      if (!a || !v) return { total: 0, varies: false, nights: 0 };
+      let total = 0, varies = false, nights = 0;
+      const base = (window.__pricing && window.__pricing.perNight) || 175;
+      for (let d = new Date(a); d < v; d.setDate(d.getDate() + 1)) {
+        const pr = priceForKey(keyOf(d));
+        if (pr !== base) varies = true;
+        total += pr; nights++;
+      }
+      return { total: total, varies: varies, nights: nights };
+    }
+
     function updateCost() {
       const p = window.__pricing || { perNight:175, extraPerson:25, hottub:0, cleaning:0, vat:0, minNights:2, baseGuests:2 };
       const summary = document.getElementById('cost-summary');
@@ -2400,7 +2481,8 @@
 
       const guests = Number(gasten && gasten.value ? gasten.value : p.baseGuests);
       const extraGuests = Math.max(0, guests - p.baseGuests);
-      const nightsCost = nights * p.perNight;
+      const stay = stayCost();
+      const nightsCost = stay.total;
       const extraCost = nights * extraGuests * p.extraPerson;
       const hottubCost = (hottubJa && hottubJa.checked) ? p.hottub : 0;
       const cleaning = p.cleaning;
@@ -2411,7 +2493,12 @@
 
       if (summary) summary.style.display = 'block';
       const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-      set('cost-nights-label', nights + ' nacht' + (nights > 1 ? 'en' : '') + ' × ' + fmt(p.perNight));
+      // Label: bij gelijke prijs "X nachten × €175", bij afwijkende prijzen een neutrale tekst
+      if (stay.varies) {
+        set('cost-nights-label', 'Verblijf (' + nights + ' nacht' + (nights > 1 ? 'en' : '') + ', variabele prijs)');
+      } else {
+        set('cost-nights-label', nights + ' nacht' + (nights > 1 ? 'en' : '') + ' × ' + fmt(p.perNight));
+      }
       set('cost-nights', fmt(nightsCost));
       const extraRow = document.getElementById('cost-extra-row');
       if (extraGuests > 0) {
@@ -2449,14 +2536,73 @@
   const monthNames = ['Januari','Februari','Maart','April','Mei','Juni','Juli','Augustus','September','Oktober','November','December'];
   const weekdays = ['Ma','Di','Wo','Do','Vr','Za','Zo'];
 
+  // Selectie-status (aankomst/vertrek via klikken op de kalender)
+  let selStart = null; // 'YYYY-MM-DD'
+  let selEnd = null;
+
   function dateKey(d) {
     return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+  }
+
+  // Is er een bezette nacht tussen twee data? (a t/m voor b)
+  function rangeHasBooked(aKey, bKey) {
+    const a = new Date(aKey), b = new Date(bKey);
+    for (let d = new Date(a); d < b; d.setDate(d.getDate() + 1)) {
+      if (bookedDates.has(dateKey(d))) return true;
+    }
+    return false;
+  }
+
+  // Vul de formuliervelden met de selectie en werk de kosten bij
+  function syncSelectionToForm() {
+    const fa = document.getElementById('f-aankomst');
+    const fv = document.getElementById('f-vertrek');
+    if (fa) fa.value = selStart || '';
+    if (fv) fv.value = selEnd || '';
+    const disp = document.getElementById('sel-display');
+    if (disp) {
+      const nl = function (key) {
+        if (!key) return '';
+        const p = key.split('-');
+        return p[2] + '-' + p[1] + '-' + p[0];
+      };
+      if (selStart && selEnd) {
+        disp.innerHTML = '<strong style="color:var(--moss);">Aankomst:</strong> ' + nl(selStart) +
+          ' &nbsp;·&nbsp; <strong style="color:var(--moss);">Vertrek:</strong> ' + nl(selEnd);
+      } else if (selStart) {
+        disp.innerHTML = '<strong style="color:var(--moss);">Aankomst:</strong> ' + nl(selStart) + ' — kies nu je vertrekdag.';
+      } else {
+        disp.textContent = 'Klik een aankomst- en vertrekdag aan in de kalender.';
+      }
+    }
+    if (window.__updateCost) window.__updateCost();
+  }
+
+  function onDayClick(key) {
+    // Nieuwe selectie starten als er nog niets is, beide gezet zijn, of vóór de start geklikt wordt
+    if (!selStart || (selStart && selEnd) || key <= selStart) {
+      selStart = key; selEnd = null;
+    } else {
+      // key > selStart: probeer als vertrek te zetten, mits geen bezette nacht ertussen
+      if (rangeHasBooked(selStart, key)) {
+        // Bezette nacht in de reeks: begin opnieuw vanaf de nieuwe dag
+        selStart = key; selEnd = null;
+      } else {
+        selEnd = key;
+      }
+    }
+    renderCalendar();
+    syncSelectionToForm();
+    if (selStart && selEnd) {
+      const bf = document.getElementById('beschikbaarheid');
+    }
   }
 
   function renderCalendar() {
     const grid = document.getElementById('cal-grid');
     const label = document.getElementById('cal-month');
     if (!grid) return;
+    const base = (window.__pricing && window.__pricing.perNight) || 175;
     label.textContent = monthNames[calCurrent.getMonth()] + ' ' + calCurrent.getFullYear();
     grid.innerHTML = '';
     weekdays.forEach(w => {
@@ -2478,17 +2624,32 @@
     }
     for (let day = 1; day <= daysInMonth; day++) {
       const d = new Date(year, month, day);
+      const key = dateKey(d);
       const el = document.createElement('div');
       el.className = 'cal-day';
       el.textContent = day;
       if (d < calToday) {
         el.classList.add('past');
-      } else if (bookedDates.has(dateKey(d))) {
+      } else if (bookedDates.has(key)) {
         el.classList.add('booked');
         el.title = 'Bezet';
       } else {
         el.classList.add('available');
-        el.title = 'Beschikbaar';
+        // Afwijkende prijs markeren
+        const price = window.__priceForKey ? window.__priceForKey(key) : base;
+        if (price !== base) {
+          el.classList.add('special');
+          el.title = 'Beschikbaar · € ' + price + ' per nacht';
+        } else {
+          el.title = 'Beschikbaar · € ' + base + ' per nacht';
+        }
+        // Selectie-highlight
+        if (selStart && key === selStart) el.classList.add('sel-start');
+        if (selEnd && key === selEnd) el.classList.add('sel-end');
+        if (selStart && selEnd && key > selStart && key < selEnd) el.classList.add('in-range');
+        // Klikbaar
+        el.style.cursor = 'pointer';
+        el.addEventListener('click', function () { onDayClick(key); });
       }
       if (d.getTime() === calToday.getTime()) el.classList.add('today');
       grid.appendChild(el);
@@ -2496,6 +2657,7 @@
     document.getElementById('cal-prev').disabled =
       (calCurrent.getFullYear() === calToday.getFullYear() && calCurrent.getMonth() <= calToday.getMonth());
   }
+  window.__renderCalendar = renderCalendar;
 
   document.getElementById('cal-prev').addEventListener('click', () => {
     calCurrent.setMonth(calCurrent.getMonth() - 1);
