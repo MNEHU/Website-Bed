@@ -75,6 +75,16 @@ collections:
           - { name: "min_nights", label: "Minimaal aantal nachten (getal)", widget: "number", value_type: "int", min: 1 }
           - { name: "base_guests", label: "Aantal personen in basisprijs", widget: "number", value_type: "int", min: 1 }
 
+          - name: "price_periods"
+            label: "Prijsperiodes (afwijkende prijs, bv. Pasen/zomer)"
+            widget: "list"
+            required: false
+            fields:
+              - { name: "label", label: "Naam periode (bv. Pasen)", widget: "string" }
+              - { name: "start", label: "Startdatum", widget: "date", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+              - { name: "end", label: "Einddatum (laatste nacht)", widget: "date", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+              - { name: "price", label: "Prijs per nacht in deze periode", widget: "number", value_type: "int", min: 0 }
+
           - name: "amenities"
             label: "Voorzieningen"
             widget: "list"
