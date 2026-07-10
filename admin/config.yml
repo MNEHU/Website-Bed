@@ -81,8 +81,8 @@ collections:
             required: false
             fields:
               - { name: "label", label: "Naam periode (bv. Pasen)", widget: "string" }
-              - { name: "start", label: "Startdatum", widget: "date", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
-              - { name: "end", label: "Einddatum (laatste nacht)", widget: "date", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+              - { name: "start", label: "Startdatum", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
+              - { name: "end", label: "Einddatum (laatste nacht)", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
               - { name: "price", label: "Prijs per nacht in deze periode", widget: "number", value_type: "int", min: 0 }
 
           - name: "amenities"
