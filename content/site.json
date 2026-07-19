@@ -39,19 +39,17 @@
     "Bedlinnen & handdoeken",
     "WiFi, water & elektriciteit",
     "Verwarming & parkeren",
-    "Gebruik van tuin & terras",
-    "Honden op aanvraag (€0 extra)",
-    "Eindschoonmaak €30 per verblijf"
+    "Gebruik van tuin & terras"
   ],
   "contact_phone": "+31 611750689",
   "vat_percent": 9,
   "price_main": "€ 175",
-  "price_cleaning": 30,
+  "price_cleaning": 0,
   "about_text_1": "Welkom bij Boshuisje Maarsmontagne!\n\nWij zijn Emile en Rachel. Emile is opgegroeid op Landgoed Maarsbergen en kent de bossen, wandelpaden en de mooiste plekjes van het landgoed als geen ander. Toen Rachel hier in 2025 kwam wonen, ontstond al snel het idee om de oude schuur op te knappen en om te bouwen tot een gastenverblijf, zodat we deze bijzondere plek ook met anderen kunnen delen. ",
   "contact_whatsapp": "+31 611750689",
   "about_text_2": "Bij de verbouwing wilden we de karakteristieke uitstraling van de schuur behouden en tegelijkertijd een comfortabel en sfeervol verblijf creëren. Een plek waar je rustig wakker wordt met een kop koffie op het terras terwijl de vogels fluiten en met een beetje geluk een konijntje voorbij huppelt. Waar je overdag de natuur in trekt voor een wandeling of fietstocht, en 's avonds de houtkachel aansteekt of bij een kampvuurtje, met een goed glas wijn, nageniet van de dag. \n\n",
   "intro_text_1": "Ooit was dit een schuur uit circa 1900 op Landgoed Maarsbergen. Vandaag de dag is het een comfortabel boshuisje, waar authentieke houten spanten en karakteristieke elementen zijn behouden en gecombineerd met een warme Scandinavische inrichting. ",
-  "contact_instagram": "boshuisje.maarsmontagne",
+  "contact_instagram": "coming soon",
   "about_text_3": "In onze vrije tijd zijn we het liefst buiten en stilzitten is niet echt ons ding. Emile is graag in het bos, bezig met een klusproject of aan het sleutelen aan een oldtimer. Rachel is vaak te vinden in haar groentetuin, verkent de omgeving hardlopend of op de racefiets, en samen trekken we er graag op uit met onze twee bruine Chesapeake Bay Retrievers, Goose & Spruce. \n\nZo helpen we je graag met de mooiste wandelroutes, leukste plekjes in de buurt en tips voor onze favoriete restaurants en koffietentjes. We hopen dat je hier net zo geniet van de rust, de natuur en deze bijzondere plek als wij dat doen. \n",
   "intro_text_2": "Midden op de Utrechtse Heuvelrug, omringd door eeuwenoud bos, begint de natuur bij de voordeur.",
   "hero_image": "/images/uploads/leersumseveld-0983-small.jpg",
@@ -83,7 +81,7 @@
     },
     {
       "icon": "♨️",
-      "name": "Hottub (aanvraag)"
+      "name": "Hottub (op aanvraag)"
     },
     {
       "icon": "📶",
