@@ -1830,9 +1830,9 @@
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
-        <li><a href="tel:+31600000000">+31 6 00 000 000</a></li>
-        <li><a href="mailto:info@maarsmontagne.nl">info@maarsmontagne.nl</a></li>
-        <li><a href="#">@boshuisje.maarsmontagne</a></li>
+        <li><a href="tel:+31600000000" id="footer-phone-link"><span data-cms="contact_phone">+31 6 00 000 000</span></a></li>
+        <li><a href="mailto:info@maarsmontagne.nl" id="footer-email-link"><span data-cms="contact_email">info@maarsmontagne.nl</span></a></li>
+        <li><a href="#" id="footer-ig-link"><span id="footer-ig-handle">@boshuisje.maarsmontagne</span></a></li>
         <li style="margin-top:1rem; color:rgba(255,255,255,0.4); font-size:0.82rem; list-style:none;">Buurtsteeg 1<br>Maarsbergen, Nederland</li>
       </ul>
     </div>
@@ -2175,24 +2175,31 @@
         if (img) { img.onerror = function(){ if(img.dataset.scene){ img.onerror=null; img.src = img.dataset.scene; } }; img.src = c.about_image; img.style.display = 'block'; }
         if (ph) ph.style.display = 'none';
       }
-      // Contactlinks koppelen aan de velden
+      // Contactlinks koppelen aan de velden (contactsectie + footer)
       if (c.contact_phone) {
-        const l = document.getElementById('contact-phone-link');
-        if (l) l.href = 'tel:' + c.contact_phone.replace(/\s/g, '');
+        const tel = 'tel:' + c.contact_phone.replace(/\s/g, '');
+        ['contact-phone-link', 'footer-phone-link'].forEach(id => {
+          const l = document.getElementById(id); if (l) l.href = tel;
+        });
       }
       if (c.contact_email) {
-        const l = document.getElementById('contact-email-link');
-        if (l) l.href = 'mailto:' + c.contact_email;
+        ['contact-email-link', 'footer-email-link'].forEach(id => {
+          const l = document.getElementById(id); if (l) l.href = 'mailto:' + c.contact_email;
+        });
       }
       if (c.contact_whatsapp) {
         const wa = 'https://wa.me/' + c.contact_whatsapp;
         document.querySelectorAll('#contact-wa-link, .whatsapp-sticky').forEach(l => l.href = wa);
       }
       if (c.contact_instagram) {
-        const l = document.getElementById('contact-ig-link');
-        const h = document.getElementById('contact-ig-handle');
-        if (l) l.href = 'https://instagram.com/' + c.contact_instagram;
-        if (h) h.textContent = '@' + c.contact_instagram;
+        const igUrl = 'https://instagram.com/' + c.contact_instagram;
+        const igHandle = '@' + c.contact_instagram;
+        ['contact-ig-link', 'footer-ig-link'].forEach(id => {
+          const l = document.getElementById(id); if (l) l.href = igUrl;
+        });
+        ['contact-ig-handle', 'footer-ig-handle'].forEach(id => {
+          const h = document.getElementById(id); if (h) h.textContent = igHandle;
+        });
       }
     } catch (e) { /* standaardteksten blijven staan */ }
   })();
