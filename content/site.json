@@ -137,6 +137,12 @@
       "start": "2026-04-03",
       "end": "2026-04-06",
       "price": 225
+    },
+    {
+      "label": "Kerst",
+      "start": "2026-12-25",
+      "end": "2027-01-04",
+      "price": 225
     }
   ],
   "hero_subtitle": "Ontsnap aan de drukte en geniet van de natuur op de Utrechtse Heuvelrug. Ontdek de mooiste wandel- en fietsroutes, of doe juist even helemaal niets.",
