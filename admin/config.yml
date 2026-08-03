@@ -97,13 +97,15 @@ collections:
             widget: "list"
             field: { name: "item", label: "Regel", widget: "string" }
 
-          - name: "photoblock"
-            label: "Fotoblok (5 blokken)"
+          - name: "gallery"
+            label: "Fotogalerij (carrousel - alle ruimtes)"
             widget: "list"
-            max: 5
+            required: false
+            summary: "{{fields.caption}}"
             fields:
-              - { name: "image", label: "Foto (optioneel; leeg = illustratie)", widget: "image", required: false }
-              - { name: "scene", label: "Type illustratie als er geen foto is", widget: "select", required: false, options: ["interior","terrace","forest","fire","lake","heath","house","pyramid"], default: "forest" }
+              - { name: "image", label: "Foto (leeg = illustratie)", widget: "image", required: false }
+              - { name: "caption", label: "Bijschrift (bv. Keuken, Slaapkamer, Tuin)", widget: "string" }
+              - { name: "scene", label: "Type illustratie als er geen foto is", widget: "select", required: false, options: ["interior","terrace","forest","fire","lake","heath","house","pyramid"], default: "interior" }
 
           - { name: "about_text_1", label: "Over ons - alinea 1", widget: "text" }
           - { name: "about_text_2", label: "Over ons - alinea 2", widget: "text" }
@@ -115,6 +117,7 @@ collections:
           - { name: "contact_email", label: "E-mailadres", widget: "string" }
           - { name: "contact_whatsapp", label: "WhatsApp-nummer (alleen cijfers, bv. 31612345678)", widget: "string" }
           - { name: "contact_instagram", label: "Instagram gebruikersnaam", widget: "string" }
+          - { name: "kvk", label: "KvK-nummer (leeg = niet tonen)", widget: "string", required: false }
 
           - { name: "terms_text", label: "Algemene voorwaarden (leeg = geen link onderaan)", widget: "text", required: false }
 
