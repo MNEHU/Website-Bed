@@ -1,5 +1,5 @@
 {
-  "kvk": "",
+  "kvk": "42117951",
   "story_title_1": " ",
   "price_per_night": 175,
   "usps": [
@@ -67,6 +67,11 @@
       "image": "",
       "caption": "Eethoek",
       "scene": "interior"
+    },
+    {
+      "scene": "interior",
+      "image": "/images/uploads/slaapkamer.jpeg",
+      "caption": "slaapkamer"
     },
     {
       "image": "/images/uploads/whatsapp-image-2026-07-06-at-22.31.21-1-.jpeg",
