@@ -64,13 +64,13 @@
       "scene": "fire"
     },
     {
-      "image": "",
+      "image": "/images/uploads/zithoek.jpeg",
       "caption": "Eethoek",
       "scene": "interior"
     },
     {
       "scene": "interior",
-      "image": "/images/uploads/slaapkamer.jpeg",
+      "image": "/images/uploads/slaap-kamer-1.jpeg",
       "caption": "slaapkamer"
     },
     {
@@ -89,12 +89,12 @@
       "scene": "interior"
     },
     {
-      "image": "",
+      "image": "/images/uploads/whatsapp-image-2026-07-06-at-22.32.31-1-.jpeg",
       "caption": "Terras",
       "scene": "terrace"
     },
     {
-      "image": "/images/uploads/whatsapp-image-2026-07-06-at-22.32.31-1-.jpeg",
+      "image": "/images/uploads/whatsapp-image-2026-07-06-at-21.29.35-5-.jpeg",
       "caption": "Tuin",
       "scene": "forest"
     }
