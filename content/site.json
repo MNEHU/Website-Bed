@@ -1,7 +1,7 @@
 {
   "kvk": "42117951",
   "story_title_1": " ",
-  "price_per_night": 175,
+  "price_per_night": 190,
   "usps": [
     {
       "title": "Historisch landgoed",
@@ -46,7 +46,7 @@
   ],
   "contact_phone": "+31 6 11750689",
   "vat_percent": 9,
-  "price_main": "€ 175",
+  "price_main": "€ 190",
   "price_cleaning": 30,
   "about_text_1": "Welkom bij Boshuisje Maarsmontagne!\n\nWij zijn Emile en Rachel. Emile is opgegroeid op Landgoed Maarsbergen en kent de bossen, wandelpaden en de mooiste plekjes van het landgoed als geen ander. Toen Rachel hier in 2025 kwam wonen, ontstond al snel het idee om de oude schuur op te knappen en om te bouwen tot een gastenverblijf, zodat we deze bijzondere plek ook met anderen kunnen delen. ",
   "contact_whatsapp": "31611750689",
@@ -161,8 +161,8 @@
       "value": "Extra tweepersoonsbed"
     }
   ],
-  "price_extra_person": 25,
-  "price_extra": "€25",
+  "price_extra_person": 50,
+  "price_extra": "€50",
   "surroundings_intro": " ",
   "price_periods": [
     {
