@@ -137,6 +137,10 @@
     {
       "icon": "📶",
       "name": "WiFi"
+    },
+    {
+      "icon": "🐶",
+      "name": "Huisdieren zijn helaas niet toegestaan"
     }
   ],
   "specs": [
