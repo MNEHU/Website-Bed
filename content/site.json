@@ -112,7 +112,7 @@
   "amenities": [
     {
       "icon": "🔥",
-      "name": "Houtkachel"
+      "name": "Houtkachel (Let op: momenteel nog niet werkend)"
     },
     {
       "icon": "🌡️",
@@ -133,10 +133,6 @@
     {
       "icon": "🪵",
       "name": "BBQ & vuurplaats"
-    },
-    {
-      "icon": "♨️",
-      "name": "Hottub (aanvraag)"
     },
     {
       "icon": "📶",
